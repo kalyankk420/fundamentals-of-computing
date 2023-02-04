@@ -1,0 +1,8 @@
+#! /bin/bash
+
+echo "enter a number:"
+read a
+sq=`expr "$a" \* "$a" `
+cube=`expr "$a" \* "$a" \* "$a" `
+echo "The square of $a =" $sq
+echo "The cube of $a=" $cube
