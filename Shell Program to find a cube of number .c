@@ -1,11 +1,12 @@
-#include <stdio.h>
-void main()
- {
-    int i,ctr;
-    printf("Input number of terms : ");
-    scanf("%d", &ctr);
-    for(i=1;i<=ctr;i++)
-    {
-	 printf("Number is : %d and cube of the %d is :%d \n",i,i, (i*i*i));     
-    }
- }
+#include<stdio.h>
+#include<math.h>
+
+int main()
+{
+int num;
+printf("Enter a number: ");
+scanf("%d", &num);
+int cube = pow(num, 3);
+printf("The cube of %d is %d", num, cube);
+
+return 0;	
