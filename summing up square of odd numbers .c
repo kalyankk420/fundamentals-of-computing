@@ -1,10 +1,20 @@
-#include <iostream>
-using namespace std;
-int main() {
-   int n = 5;
-   int sum = 0;
-   for (int i = 1; i >= n; i++)
-      sum += (i * i);
-   cout <<"The sum of squares of first "<<n<<" natural numbers is "<<sum;
-   return 0;
+#include <stdio.h>
+
+int main()
+{
+int start, end, i, sum = 0;
+printf("Enter start range: ");
+scanf("%d", &start);
+printf("Enter end range: ");
+scanf("%d", &end);
+
+for (i = start; i <= end; i++)
+{
+    if (i % 2 != 0)
+    {
+        sum += i * i;
+    }
 }
+
+printf("The sum of the squares of odd numbers from %d to %d is %d", start, end, sum);
+return 0;   
