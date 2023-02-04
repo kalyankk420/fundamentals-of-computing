@@ -1,15 +1,15 @@
-#include<stdio.h>
-void main()
+#include <stdio.h>
+
+int main()
 {
-    int i,n;
-    printf("enter a no\n");
-    scanf("%d",&n);
-    printf("Odd nos of %d terms are :- \n",n);
-    for(i=1;i<=2*n;i++)
+    int n, i;
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
+    
+    printf("The odd number series is: ");
+    for (i = 1; i <= n * 2; i += 2)
     {
-	    if(i%2==0)
-	    	continue;
-	    else
-		    printf("%d ",i);
+        printf("%d ", i);
     }
+    return 0;
 }
