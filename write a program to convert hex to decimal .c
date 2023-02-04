@@ -1,50 +1,29 @@
 #include <stdio.h>
 #include <math.h>
-#include <string.h>
+
+int hex_to_decimal(char hex[])
+{
+int i, length, decimal = 0;
+for (length = 0; hex[length] != '\0'; ++length);
+for(i=0; hex[i]!='\0'; i++)
+{
+if(hex[i]>='0' && hex[i]<='9')
+decimal += (hex[i] - 48) * pow(16, length - i - 1);
+if(hex[i]>='A' && hex[i]<='F')
+decimal += (hex[i] - 55) * pow(16, length - i - 1);
+if(hex[i]>='a' && hex[i]<='f')
+decimal += (hex[i] - 87) * pow(16, length - i - 1);
+}
+return decimal;
+}
 
 int main()
 {
-    char hex[17];
-    long long decimal, place;
-    int i = 0, val, len;
-
-    decimal = 0;
-    place = 1;
-
-    /* Input hexadecimal number from user */
-    printf("Enter any hexadecimal number: ");
-    gets(hex);
-
-    /* Find the length of total number of hex digit */
-    len = strlen(hex);
-    len--;
-
-    /*
-     * Iterate over each hex digit
-     */
-    for(i=0; hex[i]!='\0'; i++)
-    {
- 
-        /* Find the decimal representation of hex[i] */
-        if(hex[i]>='0' && hex[i]<='9')
-        {
-            val = hex[i] - 48;
-        }
-        else if(hex[i]>='a' && hex[i]<='f')
-        {
-            val = hex[i] - 97 + 10;
-        }
-        else if(hex[i]>='A' && hex[i]<='F')
-        {
-            val = hex[i] - 65 + 10;
-        }
-
-        decimal += val * pow(16, len);
-        len--;
-    }
-
-    printf("Hexadecimal number = %s\n", hex);
-    printf("Decimal number = %lld", decimal);
-
-    return 0;
+char hex[100];
+int decimal;
+printf("Enter the hexadecimal number: ");
+scanf("%s", hex);
+decimal = hex_to_decimal(hex);
+printf("Decimal equivalent of hexadecimal number %s is %d", hex, decimal);
+return 0;
 }
