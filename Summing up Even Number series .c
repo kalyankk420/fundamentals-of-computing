@@ -2,19 +2,17 @@
 
 int main()
 {
-    int i, n, sum=0;
+  int n, i, sum = 0;
 
-    /* Input upper limit from user */
-    printf("Enter upper limit: ");
-    scanf("%d", &n);
+  printf("Enter the number of even numbers in the series: ");
+  scanf("%d", &n);
 
-    for(i=2; i<=n; i+=2)
-    {
-        /* Add current even number to sum */
-        sum += i;
-    }
+  for (i = 2; i <= 2*n; i = i + 2)
+  {
+    sum = sum + i;
+  }
 
-    printf("Sum of all even number between 1 to %d = %d", n, sum);
+  printf("The sum of the series of %d even numbers is %d\n", n, sum);
 
-    return 0;
+  return 0;
 }
