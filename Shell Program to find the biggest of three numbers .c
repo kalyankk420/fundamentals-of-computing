@@ -1,23 +1,14 @@
-#!/bin/sh
-echo "Enter value of 'a':"
-read a
-echo "Enter value of 'b':"
-read b
-echo "Enter value of 'c':"
-read c
-if [ $a -gt $b ]
-then
-    if [ $a -gt $c ]
-    then 
-     echo "a is greatest"
-    else
-     echo "c is greatest"
-    fi
-else
-    if [ $b -gt $c ]
-    then 
-    echo "b is greatest"
-    else
-    echo "c is greatest"
-    fi
-fi
+#include <stdio.h>
+int main()
+{
+int num1, num2, num3;
+printf("Enter three numbers: ");
+scanf("%d%d%d", &num1, &num2, &num3);
+if (num1 >= num2 && num1 >= num3)
+printf("%d is the largest number", num1);
+if (num2 >= num1 && num2 >= num3)
+printf("%d is the largest number", num2);
+if (num3 >= num1 && num3 >= num2)
+printf("%d is the largest number", num3);
+return 0;
+}
