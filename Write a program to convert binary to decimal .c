@@ -1,29 +1,18 @@
-// convert binary to decimal
+#include<stdio.h>
+#include<math.h>
 
-#include <stdio.h>
-#include <math.h>
+int main()
+{
+int num, decimal = 0, i = 0;
+printf("Enter the binary number: ");
+scanf("%d", &num);
 
-// function prototype
-int convert(long long);
-
-int main() {
-  long long n;
-  printf("Enter a binary number: ");
-  scanf("%lld", &n);
-  printf("%lld in binary = %d in decimal", n, convert(n));
-  return 0;
+while (num != 0)
+{
+    decimal += (num % 10) * pow(2, i);
+    num /= 10;
+    i++;
 }
 
-// function definition
-int convert(long long n) {
-  int dec = 0, i = 0, rem;
-
-  while (n!=0) {
-    rem = n % 10;
-    n /= 10;
-    dec += rem * pow(2, i);
-    ++i;
-  }
-
-  return dec;
-}
+printf("The decimal equivalent of the binary number is: %d\n", decimal);
+return 0;  
