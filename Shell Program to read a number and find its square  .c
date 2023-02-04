@@ -1,8 +1,11 @@
-#! /bin/bash
+#include <stdio.h>
+#include <math.h>
 
-echo "enter a number:"
-read a
-sq=`expr "$a" \* "$a" `
-cube=`expr "$a" \* "$a" \* "$a" `
-echo "The square of $a =" $sq
-echo "The cube of $a=" $cube
+int main() {
+int num, square;
+printf("Enter a number: ");
+scanf("%d", &num);
+square = pow(num, 2);
+printf("The square of %d is %d\n", num, square);
+return 0;
+}
