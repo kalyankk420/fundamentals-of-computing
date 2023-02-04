@@ -1,20 +1,18 @@
 
 
-#include<stdio.h>
-#include<conio.h>
-int main()
-{
-	int a,i;
-	printf("enter the limit of a: ");
-	scanf("%d",&a);
-	printf("\n");
-	for(i=1;i<=a;i++)
-	{
-		if(i==a)
-		printf("%d",i);
-		else
-		printf("%d",i);
-	}
-	getch();
-	return 0;
+#include <stdio.h>
+
+int main() {
+int i, n;
+
+// Input the number of terms in the series
+printf("Enter the number of terms in the series: ");
+scanf("%d", &n);
+
+// Generate the even number series
+for (i = 2; i <= n * 2; i += 2) {
+printf("%d ", i);
+}
+
+return 0;
 }
