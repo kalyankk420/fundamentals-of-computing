@@ -1,17 +1,22 @@
-#include <stdio.h>
- 
+#include<stdio.h>
+
 int main()
 {
-    int x, y;
-    printf("Enter Value of x ");
-    scanf("%d", &x);
-    printf("\nEnter Value of y ");
-    scanf("%d", &y);
- 
-    int temp = x;
-    x = y;
-    y = temp;
- 
-    printf("\nAfter Swapping: x = %d, y = %d", x, y);
+    int a, b, temp;
+
+    printf("Enter the first number: ");
+    scanf("%d", &a);
+
+    printf("Enter the second number: ");
+    scanf("%d", &b);
+
+    printf("Before swapping: a = %d and b = %d\n", a, b);
+
+    temp = a;
+    a = b;
+    b = temp;
+
+    printf("After swapping: a = %d and b = %d\n", a, b);
+
     return 0;
 }
