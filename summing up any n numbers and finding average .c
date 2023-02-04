@@ -1,25 +1,20 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int main()
-{
-  int i,n,Sum=0,numbers;
-  float Average;
+int main() {
+  int n, i;
+  float num, sum = 0, average;
 
-  printf("\nPlease Enter How many Number you want?\n");
-  scanf("%d",&n);
+  printf("Enter the number of elements: ");
+  scanf("%d", &n);
 
-  printf("\nPlease Enter the elements one by one\n");
-  for(i=0;i<n;++i)
-   {
-     scanf("%d",&numbers);
-     Sum = Sum +numbers;
-   }
+  for (i = 0; i < n; i++) {
+    printf("Enter a number: ");
+    scanf("%f", &num);
+    sum += num;
+  }
 
-  Average = Sum/n;
-
-  printf("\nSum of the %d Numbers = %d",n, Sum);
-  printf("\nAverage of the %d Numbers = %.2f",n, Average);
+  average = sum / n;
+  printf("Average = %.2f", average);
 
   return 0;
 }
-Please Enter 
