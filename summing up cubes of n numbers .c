@@ -1,15 +1,20 @@
-#include<stdio.h>
-long cube_sum_n_natural(int n) {
-   long sum = 0;
-   int i;
-   for (i = 1; i <= n; i++) {
-      sum += i * i * i; //cube i and add it with sum
-   }
-   return sum;
-}
-main() {
-   int n;
-   printf("Enter value of n: ");
-   scanf("%d", &n);
-   printf("Result is: %ld", cube_sum_n_natural(n));
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+  int n, i;
+  double num, sum = 0;
+
+  printf("Enter the value of n: ");
+  scanf("%d", &n);
+
+  for (i = 0; i < n; i++) {
+    printf("Enter a number: ");
+    scanf("%lf", &num);
+    sum += pow(num, 3);
+  }
+
+  printf("The sum of cubes of %d numbers is %lf\n", n, sum);
+
+  return 0;
 }
