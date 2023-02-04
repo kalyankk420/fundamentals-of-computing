@@ -1,21 +1,21 @@
 #include <stdio.h>
+
+int sum_of_digits(int num)
+{
+int sum = 0;
+while (num > 0)
+{
+sum += num % 10;
+num /= 10;
+}
+return sum;
+}
+
 int main()
 {
-   int n, t, sum = 0, remainder;
-
-   printf("Enter an integer\n");
-   scanf("%d", &n);
-
-   t = n;
-
-   while (t != 0)
-   {
-      remainder = t % 10;
-      sum       = sum + remainder;
-      t         = t / 10;
-   }
-
-   printf("Sum of digits of %d = %d\n", n, sum);
-
-   return 0;
+int num;
+printf("Enter an integer: ");
+scanf("%d", &num);
+printf("The sum of digits of %d is %d\n", num, sum_of_digits(num));
+return 0;
 }
