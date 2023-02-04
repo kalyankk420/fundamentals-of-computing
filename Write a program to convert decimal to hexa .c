@@ -1,28 +1,36 @@
 #include <stdio.h>
- 
-int main()
-{
-    long decimalnum, quotient, remainder;
-    int i, j = 0;
-    char hexadecimalnum[100];
- 
-    printf("Enter decimal number: ");
-    scanf("%ld", &decimalnum);
- 
-    quotient = decimalnum;
- 
-    while (quotient != 0)
-    {
-        remainder = quotient % 16;
-        if (remainder < 10)
-            hexadecimalnum[j++] = 48 + remainder;
+#include <math.h>
+
+void decToHexa(int n) 
+{    
+    char hexaDeciNum[100]; 
+    int i = 0; 
+    while(n!=0) 
+    {    
+        int temp  = 0; 
+        temp = n % 16; 
+        if(temp < 10) 
+        { 
+            hexaDeciNum[i] = temp + 48; 
+            i++; 
+        } 
         else
-            hexadecimalnum[j++] = 55 + remainder;
-        quotient = quotient / 16;
-    }
- 
-    // display integer into character
-    for (i = j; i >= 0; i--)
-            printf("%c", hexadecimalnum[i]);
+        { 
+            hexaDeciNum[i] = temp + 55; 
+            i++; 
+        } 
+        n = n/16; 
+    } 
+    printf("Hexadecimal number: "); 
+    for(int j=i-1; j>=0; j--) 
+        printf("%c", hexaDeciNum[j]); 
+}
+
+int main() 
+{    
+    int n;
+    printf("Enter a decimal number: ");
+    scanf("%d", &n);
+    decToHexa(n);
     return 0;
 }
