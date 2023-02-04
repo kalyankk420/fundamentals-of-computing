@@ -1,24 +1,19 @@
 #include <stdio.h>
 
-//function for creating the sum of the 
-//series up to Nth term
-int series_sum(int n)
-{
-    if (n % 2 == 0)
-        return (-(n / 2));
-    else
-        return ((n + 1) / 2);
-}
+int main() {
+  int n, sum = 0, i;
 
-// main code
-int main()
-{
-    int n;
-    printf("Series:1-2+3-4+5-6+7-8.....N\n");
-    printf("Want some up to N terms?\nEnter the N term:");
-    scanf("%d", &n);
-    
-    printf("Sum is:%d", series_sum(n));
-    
-    return 0;
+  printf("Enter the value of n: ");
+  scanf("%d", &n);
+
+  for (i = 1; i <= n; i++) {
+    if (i % 2 == 0) {
+      sum -= i;
+    } else {
+      sum += i;
+    }
+  }
+
+  printf("The sum of the series is: %d\n", sum);
+  return 0;
 }
