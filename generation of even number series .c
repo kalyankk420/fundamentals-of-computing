@@ -1,16 +1,16 @@
-#include<stdio.h>
-int main()
-{
-	int i,n;
-	printf("print all even numbers till: ");
-	scanf("%d",&n);
-	printf("even numbers from 1 to %d are: \n", n);
-	for(i=1; i<=n; i++)
-	{
-		if(i%2 == 0)
-		{
-			printf("%d\n", i);
-		}
-	}
-	return 0;
+#include <stdio.h>
+
+int main() {
+int i, n;
+
+// Input the number of terms in the series
+printf("Enter the number of terms in the series: ");
+scanf("%d", &n);
+
+// Generate the even number series
+for (i = 2; i <= n * 2; i += 2) {
+printf("%d ", i);
+}
+
+return 0;
 }
